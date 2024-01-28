@@ -15,4 +15,4 @@ When are stacks helpful
 1. When you have to trace back your steps - e.g browser history tracking
 2. Undo operations whn typing
 3. Expression conversions
-4. Call stack used n=in javascript runtime
+4. Call stack used in javascript runtime
