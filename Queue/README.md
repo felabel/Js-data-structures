@@ -5,3 +5,5 @@
 It supports two main operations;
 1. Enqueue - adds element to the rear/tail of the collection
 2. Dequeue - removes element from the front/head of the collection
+peek() - get value of the first elmemnt at the front without removing it
+peint() - visualize the elements
