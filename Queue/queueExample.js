@@ -27,7 +27,9 @@ class Queue {
 }
 
 const queue = new Queue()
-queue.enqueue([2,3,4])
-// console.log(queue.dequeue())
-queue.print()
+queue.enqueue(3)
+queue.enqueue(6)
+queue.enqueue(9)
+console.log(queue.dequeue())
+// queue.print()
 // console.log(queue.isEmpty())

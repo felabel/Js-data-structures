@@ -7,3 +7,6 @@ It supports two main operations;
 2. Dequeue - removes element from the front/head of the collection
 peek() - get value of the first elmemnt at the front without removing it
 peint() - visualize the elements
+
+# Circular queue
+
