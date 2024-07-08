@@ -52,7 +52,64 @@ class LinkedList {
         }
         this.size++
     }
-    
+    insert(value, index) {
+        if(index < 0 || index > this.size){
+            console.log('invalid')
+            return 
+        }
+        // when index is equal to 0
+        if(index === 0){
+            this.prepend(value)
+        } 
+        // insert at a given index, we need a reference to the previous node - a temporary pointer
+        else {
+            const node = new Node(value)
+            let prev = this.head;
+            for (let i = 0; i < index-1; i++) {
+                prev = prev.next
+            }
+            node.next = prev.next
+            prev.next = node
+            this.size++
+        }
+    }
+
+    // remove from a given index
+    removeFrom(index) {
+        if(index < 0 || index > this.size){
+            console.log('invalid')
+            return null
+        }
+         // when index is equal to 0
+        //  create a variable as a reference to the node to be removed
+        let removeNode 
+        if(index === 0){
+            removeNode = this.head
+            this.head = this.head.next
+        } else {
+            let prev = this.head
+            for (let i=0; i<index - 1; i++){
+                prev = prev.next
+            }
+            removeNode = prev.next;
+            prev.next = removeNode.next
+        }
+        this.size--
+        return removeNode.value
+    }
+
+    // removing a value from a list
+
+    removeValue(value){
+        if(this.isEmpty()){
+            return null
+        }
+        if(this.head.value === value){
+            this.head = this.head.next;
+            this.size--;
+            return value;
+        }
+    }
     // print the content of the node
     print() {
         if(this.isEmpty()){
@@ -73,9 +130,21 @@ const list = new LinkedList()
 console.log(list.isEmpty())
 console.log(list.getSize())
 list.print()
-list.append(10)
+
+list.insert(10,0)
 list.print()
 
-list.append(20)
-list.append(30)
+list.insert(20,0)
+list.print()
+
+list.insert(30,1)
+list.print()
+
+list.insert(40,2)
+list.print()
+
+list.insert(30,-1)
+list.print()
+console.log(list.getSize())
+console.log(list.removeFrom(1))
 list.print()
