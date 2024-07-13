@@ -108,7 +108,20 @@ class LinkedList {
             this.head = this.head.next;
             this.size--;
             return value;
+        } else {
+            let prev = this.head;
+            while(prev.next && prev.next.value !== value) {
+                prev = prev.next
+            }
+            if(prev.next){
+                const removeNode = prev.next
+                prev.next = removeNode.next
+                this.size--
+                return value
+            }
+            return null
         }
+
     }
     // print the content of the node
     print() {
@@ -131,20 +144,20 @@ console.log(list.isEmpty())
 console.log(list.getSize())
 list.print()
 
-list.insert(10,0)
+list.insert(10, 0)
 list.print()
 
-list.insert(20,0)
+list.insert(20, 0)
 list.print()
 
-list.insert(30,1)
+list.insert(30, 1)
 list.print()
 
-list.insert(40,2)
+list.insert(40, 2)
 list.print()
 
-list.insert(30,-1)
-list.print()
 console.log(list.getSize())
-console.log(list.removeFrom(1))
+
+console.log('remove value', list.removeValue(40 ))
 list.print()
+
